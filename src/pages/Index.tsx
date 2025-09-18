@@ -257,7 +257,7 @@ const Index = () => {
       <div className="w-full max-w-[1400px] mx-auto relative z-10 pt-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">🏢 유진그룹 이태원111 준공식 🏢</h1>
-          <p className="text-gray-300 text-lg">협찬사와 함께하는 특별한 추첨 이벤트</p>
+          <p className="text-gray-300 text-lg">유진그룹의 VIP를 위한 추첨 이벤트</p>
         </div>
 
         {/* 메인 추첨 영역 */}
