@@ -69,7 +69,7 @@ const Index = () => {
 
         setParticipants(newParticipants);
         setWinners([]);
-        setCurrentDrawResult([]);
+        setPrizeResults({});
       } catch (error) {
         console.error('파일 읽기 오류');
       }
@@ -256,8 +256,7 @@ const Index = () => {
       
       <div className="w-full max-w-[1400px] mx-auto relative z-10 pt-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">🏢 유진그룹 이태원111 준공식 🏢</h1>
-          <p className="text-gray-300 text-lg">유진그룹의 VIP를 위한 추첨 이벤트</p>
+          <h1 className="text-4xl font-bold text-white mt-2 mb-1 drop-shadow-lg">유진그룹 이태원111 준공식</h1>
         </div>
 
         {/* 메인 추첨 영역 */}
@@ -277,7 +276,7 @@ const Index = () => {
                   {/* 현재 상품 표시 */}
                   {prizes.length > 0 && currentPrizeIndex < prizes.length ? (
                     <div>
-                      <h3 className="text-3xl font-bold text-yellow-300 mb-6">🎁 상품 🎁</h3>
+                      <h3 className="text-3xl font-bold text-yellow-300 mb-6">🎁 상품추첨 🎁</h3>
                       <div className="bg-black/30 rounded-lg p-6 border border-yellow-500/30 mb-6">
                         <div className="text-2xl text-yellow-300 font-semibold">
                           {prizes[currentPrizeIndex].text}
@@ -288,10 +287,10 @@ const Index = () => {
                       {prizeResults[currentPrizeIndex] && (
                         <div className="space-y-4">
                           <h4 className="text-xl font-bold text-white">🌟 당첨번호 🌟</h4>
-                          <div className="grid grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-2">
+                          <div className="flex flex-wrap justify-center gap-6">
                             {prizeResults[currentPrizeIndex].map((number, index) => (
-                              <div key={index} className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-2 text-center winner-glow">
-                                <div className="text-sm font-bold text-black">
+                              <div key={index} className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-6 text-center winner-glow">
+                                <div className="text-3xl font-bold text-black">
                                   {number}
                                 </div>
                               </div>
@@ -304,8 +303,8 @@ const Index = () => {
                   ) : (
                     <div>
                       <Shuffle className="mx-auto h-16 w-16 mb-4 opacity-50" />
-                      <p className="text-xl">협찬사와 함께하는 특별한 추첨을 시작해보세요!</p>
-                      <p className="text-sm mt-2 opacity-70">번호 파일과 상품 파일을 업로드해주세요</p>
+                      <p className="text-xl">추첨</p>
+                      <p className="text-sm mt-2 opacity-70">번호 파일과 상품 파일 업로드</p>
                     </div>
                   )}
                 </div>
