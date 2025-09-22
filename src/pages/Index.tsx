@@ -277,7 +277,7 @@ const Index = () => {
                   {prizes.length > 0 && currentPrizeIndex < prizes.length ? (
                     <div>
                       <h3 className="text-2xl text-yellow-300 mb-6">🎁 상품추첨 🎁</h3>
-                      <div className="bg-black/30 rounded-lg p-6 border border-yellow-500/30 mb-6">
+                      <div className="bg-black/30 rounded-lg p-6 border-2 border-yellow-500/30 mb-6">
                         <div className="text-2xl text-yellow-300">
                           {prizes[currentPrizeIndex].text}
                         </div>
