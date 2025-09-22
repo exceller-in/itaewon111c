@@ -4,9 +4,23 @@
 
 /* 우주 배경과 별 애니메이션 */
 .space-background {
-  background: linear-gradient(135deg, #0c0c1e 0%, #1a1a3e 50%, #2d1b69 100%);
+  background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 50%, #1f1f1f 100%);
   position: relative;
   overflow: hidden;
+}
+
+h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+div {  
+  font-family: "Noto Serif KR", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .stars {

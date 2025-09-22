@@ -256,29 +256,29 @@ const Index = () => {
       
       <div className="w-full max-w-[1400px] mx-auto relative z-10 pt-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mt-2 mb-1 drop-shadow-lg">유진그룹 이태원111 준공식</h1>
+          <h1 className="text-5xl text-white">유진그룹 이태원111 준공식</h1>
         </div>
 
         {/* 메인 추첨 영역 */}
-        <Card className="bg-black/20 backdrop-blur-sm border-purple-500/30 shadow-2xl mb-8">
+        <Card className="bg-black/20 backdrop-blur-sm border-gray-700/50 shadow-2xl mb-8">
           <CardContent className="p-8">
             {/* 상품 표시 영역 */}
-            <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-xl p-8 min-h-[400px] border border-purple-500/30 backdrop-blur-sm w-full mb-6">
+            <div className="bg-gradient-to-br from-gray-900/70 via-black/70 to-stone-900/70 rounded-xl p-8 min-h-[400px] border border-gray-700/50 backdrop-blur-sm w-full mb-6">
               {isDrawing ? (
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-4 animate-pulse">
+                  <div className="text-4xl text-white mb-4 animate-pulse">
                     {animatingNumbers.join(' • ')}
                   </div>
-                  <p className="text-purple-200 text-lg">✨ 추첨 중... ✨</p>
+                  <p className="text-gray-300 text-lg">✨ 추첨 중... ✨</p>
                 </div>
               ) : (
                 <div className="text-center space-y-6">
                   {/* 현재 상품 표시 */}
                   {prizes.length > 0 && currentPrizeIndex < prizes.length ? (
                     <div>
-                      <h3 className="text-3xl font-bold text-yellow-300 mb-6">🎁 상품추첨 🎁</h3>
+                      <h3 className="text-2xl text-yellow-300 mb-6">🎁 상품추첨 🎁</h3>
                       <div className="bg-black/30 rounded-lg p-6 border border-yellow-500/30 mb-6">
-                        <div className="text-2xl text-yellow-300 font-semibold">
+                        <div className="text-2xl text-yellow-300">
                           {prizes[currentPrizeIndex].text}
                         </div>
                       </div>
@@ -286,11 +286,11 @@ const Index = () => {
                       {/* 현재 상품의 당첨번호 표시 */}
                       {prizeResults[currentPrizeIndex] && (
                         <div className="space-y-4">
-                          <h4 className="text-xl font-bold text-white">🌟 당첨번호 🌟</h4>
+                          <h4 className="text-xl text-white">🌟 당첨번호 🌟</h4>
                           <div className="flex flex-wrap justify-center gap-6">
                             {prizeResults[currentPrizeIndex].map((number, index) => (
                               <div key={index} className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-6 text-center winner-glow">
-                                <div className="text-3xl font-bold text-black">
+                                <div className="text-3xl text-black">
                                   {number}
                                 </div>
                               </div>
@@ -321,7 +321,7 @@ const Index = () => {
                   size="sm"
                   onClick={prevPrize}
                   disabled={currentPrizeIndex <= 0}
-                  className="border-purple-400 text-white hover:bg-purple-500/20 h-8 px-3"
+                  className="border-gray-700 text-gray-300 hover:bg-gray-800/50 h-8 px-3"
                 >
                   이전
                 </Button>
@@ -333,7 +333,7 @@ const Index = () => {
                   size="sm"
                   onClick={nextPrize}
                   disabled={currentPrizeIndex >= prizes.length - 1}
-                  className="border-purple-400 text-white hover:bg-purple-500/20 h-8 px-3"
+                  className="border-gray-700 text-gray-300 hover:bg-gray-800/50 h-8 px-3"
                 >
                   다음
                 </Button>
@@ -347,18 +347,18 @@ const Index = () => {
                   size="sm"
                   onClick={() => adjustDrawCount(-1)}
                   disabled={drawCount <= 1}
-                  className="border-purple-400 text-white hover:bg-purple-500/20 h-8 w-8 p-0"
+                  className="border-gray-700 text-gray-300 hover:bg-gray-800/50 h-8 w-8 p-0"
                 >
                   <Minus className="h-3 w-3" />
                 </Button>
-                <div className="text-xl font-bold w-12 text-center text-white">
+                <div className="text-xl w-12 text-center text-white">
                   {drawCount}
                 </div>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => adjustDrawCount(1)}
-                  className="border-purple-400 text-white hover:bg-purple-500/20 h-8 w-8 p-0"
+                  className="border-gray-700 text-gray-300 hover:bg-gray-800/50 h-8 w-8 p-0"
                 >
                   <Plus className="h-3 w-3" />
                 </Button>
@@ -368,9 +368,9 @@ const Index = () => {
               <Button
                 onClick={performDraw}
                 disabled={isDrawing || availableParticipants.length === 0 || prizes.length === 0 || currentPrizeIndex >= prizes.length}
-                className="h-12 px-8 text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border border-purple-400 shadow-lg shadow-purple-500/25"
+                className="h-12 px-8 text-lg bg-gradient-to-br from-gray-700 to-black hover:from-gray-800 hover:to-black border border-gray-700 shadow-lg shadow-gray-700/25"
               >
-                {isDrawing ? '✨ 추첨 중... ✨' : '🚀 추첨 시작 🚀'}
+                {isDrawing ? '✨ 추첨 중... ✨' : '추첨 시작'}
               </Button>
             </div>
 
@@ -380,7 +380,7 @@ const Index = () => {
                   variant="outline"
                   onClick={resetResults}
                   disabled={winners.length === 0}
-                  className="flex-1 border-purple-400 text-white hover:bg-purple-500/20"
+                  className="flex-1 border-gray-700 text-white hover:bg-gray-800/50 h-8 w-8 p-0"
                 >
                   <RotateCcw className="h-4 w-4 mr-2" />
                   초기화
@@ -389,7 +389,7 @@ const Index = () => {
                   variant="outline"
                   onClick={downloadResults}
                   disabled={winners.length === 0}
-                  className="flex-1 border-purple-400 text-white hover:bg-purple-500/20"
+                  className="flex-1 border-gray-700 text-white hover:bg-gray-800/50 h-8 w-8 p-0"
                 >
                   <Download className="h-4 w-4 mr-2" />
                   저장
@@ -400,11 +400,11 @@ const Index = () => {
 
         {/* 하단: 당첨자 리스트 (스크롤해야 보임) */}
         <div className="mt-16 pt-16">
-          <Card className="bg-black/20 backdrop-blur-sm border-purple-500/30 shadow-2xl">
+          <Card className="bg-black/20 backdrop-blur-sm border-gray-700/50 shadow-2xl">
             <CardHeader className="pb-6">
               <CardTitle className="text-center text-white text-2xl">
                 🏆 당첨자 명단 🏆
-                <Badge variant="secondary" className="bg-purple-600 text-white ml-4">{winners.length}명</Badge>
+                <Badge variant="secondary" className="bg-gray-700 text-gray-300 ml-4">{winners.length}명</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -412,16 +412,16 @@ const Index = () => {
                 {winners.map((winner) => (
                   <div
                     key={`${winner.number}-${winner.order}`}
-                    className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg border border-purple-400/50 backdrop-blur-sm p-3"
+                    className="bg-gradient-to-br from-gray-900/40 to-black/40 rounded-lg border border-gray-700/50 backdrop-blur-sm p-3"
                   >
                     <div className="text-center space-y-1">
-                      <div className="text-lg font-bold text-white">
+                      <div className="text-lg text-white">
                         {winner.number}
                       </div>
                       <div className="text-xs text-yellow-300 bg-black/30 rounded p-1 truncate" title={winner.prizeText}>
                         {winner.prizeText.length > 15 ? winner.prizeText.substring(0, 15) + '...' : winner.prizeText}
                       </div>
-                      <Badge variant="secondary" className="bg-yellow-500 text-black font-bold text-xs">
+                      <Badge variant="secondary" className="bg-yellow-500 text-black text-xs">
                         #{winner.order}
                       </Badge>
                     </div>
@@ -429,7 +429,7 @@ const Index = () => {
                 ))}
               </div>
               {winners.length === 0 && (
-                <div className="text-center text-purple-200 py-8">
+                <div className="text-center text-gray-300 py-8">
                   🌌 아직 당첨자가 없습니다 🌌
                 </div>
               )}
@@ -440,10 +440,10 @@ const Index = () => {
 
         {/* 우측 하단 파일 업로드 - 작은 텍스트 */}
         <div className="fixed bottom-4 right-4 z-10">
-          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-purple-500/30">
+          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50">
             <div className="text-center space-y-2">
               <label htmlFor="number-file-upload" className="cursor-pointer block">
-                <span className="text-xs text-purple-200 hover:text-white opacity-70 hover:opacity-100">
+                <span className="text-xs text-gray-400 hover:text-white opacity-70 hover:opacity-100">
                   📊 번호 파일
                 </span>
                 <input
@@ -455,8 +455,8 @@ const Index = () => {
                 />
               </label>
               <label htmlFor="prize-file-upload" className="cursor-pointer block">
-                <span className="text-xs text-purple-200 hover:text-white opacity-70 hover:opacity-100">
-                  🎁 상품 파일
+                <span className="text-xs text-gray-400 hover:text-white opacity-70 hover:opacity-100">
+                  상품 파일
                 </span>
                 <input
                   id="prize-file-upload"
@@ -468,7 +468,7 @@ const Index = () => {
               </label>
               <button
                 onClick={loadSampleData}
-                className="text-xs text-purple-300 hover:text-white opacity-60 hover:opacity-100 block w-full"
+                className="text-xs text-gray-400 hover:text-white opacity-60 hover:opacity-100 block w-full"
               >
                 샘플 데이터
               </button>
